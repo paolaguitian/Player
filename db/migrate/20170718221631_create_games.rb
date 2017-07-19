@@ -8,6 +8,7 @@ class CreateGames < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :sport
       t.text :description
+    
 
       t.timestamps
     end
