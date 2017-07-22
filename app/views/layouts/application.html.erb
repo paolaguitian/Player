@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
   <head>
     <title>Player</title>
     <%= csrf_meta_tags %>
@@ -120,5 +118,12 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMpQUGAuepSfFlf7v4HTXQk_ObdyiX3Os&callback=initMap">
     </script>
+  <% if current_user %>
+  Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %>
+
+<%= yield %>
 </body>
 </html>
