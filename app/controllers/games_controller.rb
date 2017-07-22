@@ -63,9 +63,8 @@ class GamesController < ApplicationController
       gp.save!
   end
 
-  def current_user
-    @current_user = Games.users.find_by(params[:id])
-  end
+
+
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
