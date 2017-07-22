@@ -7,6 +7,10 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  # def current_user
+  #   @current_user = Game.find_by(params[:id])
+  # end
+
   # GET /games/1
   # GET /games/1.json
   def show
@@ -30,7 +34,7 @@ class GamesController < ApplicationController
     respond_to do |format|
       if @game.save
         gp = GamePlayer.new #this activates the join table we need
-        gp.user_id = @current_user.id 
+        gp.user_id = @current_user.id
         gp.game_id = @game.id
         gp.save!
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
@@ -63,9 +67,6 @@ class GamesController < ApplicationController
       gp.save!
   end
 
-  def current_user
-    @current_user = Games.users.find_by(params[:id])
-  end
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
