@@ -30,7 +30,7 @@ class GamesController < ApplicationController
     respond_to do |format|
       if @game.save
         gp = GamePlayer.new #this activates the join table we need
-        gp.user_id = @current_user.id 
+        gp.user_id = @current_user.id
         gp.game_id = @game.id
         gp.save!
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
