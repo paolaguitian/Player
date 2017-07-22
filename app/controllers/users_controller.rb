@@ -5,11 +5,16 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+   
+
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+
+
   end
 
   # GET /users/new
@@ -28,6 +33,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       redirect_to '/'
+
     else
       redirect_to '/signup'
     end
