@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root 'games#index'
    resources :games
 
-  root 'users#index'
-  resources :users
+  # root 'users#index'
+  # resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get '/login' 'users#new'
   # This route sends requests to our naked url to the *cool* action in the *gif* controller.
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 # This is optional (as is the root to: above).
 # get '/cool' => 'gif#cool'
 # get '/sweet' => 'gif#sweet'
-  
+
   root 'games#index'
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
