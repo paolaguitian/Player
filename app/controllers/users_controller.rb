@@ -5,11 +5,16 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+   
+
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+
+
   end
 
   # GET /users/new
@@ -24,7 +29,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
+    @games
     if @user.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"

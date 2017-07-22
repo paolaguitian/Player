@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :join]
 
   # GET /games
   # GET /games.json
@@ -10,6 +10,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @join_users = @game.users
   end
 
   # GET /games/new
@@ -28,6 +29,10 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
+        gp = GamePlayer.new #this activates the join table we need
+        gp.user_id = @current_user.id 
+        gp.game_id = @game.id
+        gp.save!
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
@@ -51,6 +56,16 @@ class GamesController < ApplicationController
     end
   end
 
+  def join_game
+      gp = GamePlayer.new
+      gp.user_id = params[:user_id]
+      gp.game_id = @game.id
+      gp.save!
+  end
+
+  def current_user
+    @current_user = Games.users.find_by(params[:id])
+  end
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
