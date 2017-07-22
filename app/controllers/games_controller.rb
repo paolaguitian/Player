@@ -7,10 +7,6 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
-  # def current_user
-  #   @current_user = Game.find_by(params[:id])
-  # end
-
   # GET /games/1
   # GET /games/1.json
   def show
