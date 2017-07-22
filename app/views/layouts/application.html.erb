@@ -2,6 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Player", 'games#index', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   'games#index' %></li>
+            <li><%= link_to "Help",   '#' %></li>
+            <li><%= link_to "Log in", '/login' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   <%= csrf_meta_tags %>
   <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
   </script>
@@ -18,27 +30,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Player</title>
   <style>
-    #map{
-      height:400px;
-      width:100%;
+    #map {
+      height: 50%;
+      width: 50%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 10px;
+      padding: 0;
     }
   </style>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "Player", 'games#index', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   'games#index' %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '/login' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="container">
-     <%= yield %>
-   </div>
+
+    <%= yield %>
+
+
   </body>
   </html>
