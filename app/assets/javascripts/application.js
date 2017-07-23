@@ -12,4 +12,5 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= requrie map/main
 //= require_tree .
