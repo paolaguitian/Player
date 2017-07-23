@@ -1,4 +1,8 @@
 
+
+<%= hidden_field_tag 'games_lat_and_lng', [{:lat => @game.latitude, :lng => @game.longitude, :description => @game.description}].to_json %>
+
+<%= render 'map' %>
 <p id="notice"><%= notice %></p>
 
 <p>
