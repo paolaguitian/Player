@@ -1,3 +1,4 @@
+
 <div class="center jumbotron">
   <h1>Welcome to the Player App</h1>
 
@@ -9,13 +10,14 @@
 
   <%= link_to "Sign up now!", '/signup', class: "btn btn-lg btn-primary" %>
 </div>
-
+<%= render 'map' %>
 <!-- <%= link_to image_tag("rails1.png", alt: "Rails logo"),
             'http://rubyonrails.org/' %> -->
 <p id="notice"><%= notice %></p>
 
 <h1>Games</h1>
 
+<%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
 <table>
   <thead>
     <tr>

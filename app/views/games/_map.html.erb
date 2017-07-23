@@ -5,13 +5,45 @@
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      var map, infoWindow;
+
       function initMap() {
+        var map, infoWindow;
         map = new google.maps.Map(document.getElementById('map'), {
         //  center: {lat: -34.397, lng: 150.644},
           zoom: 15
         });
+
         infoWindow = new google.maps.InfoWindow;
+        var locations = JSON.parse($('#games_lat_and_lng').val())
+          var i;
+            for(loc of locations){
+              if( loc.lat !== null && loc.lng !== null ){
+
+                var myLatLng = {lat: loc.lat, lng: loc.lng};
+                var marker = new google.maps.Marker({
+                  position: myLatLng,
+                  map: map,
+                  title: 'Hello World!'
+                })
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i){
+                  return function() {
+                    if( locations[i] !== undefined && locations[i].description !== undefined) {
+                      infoWindow.setContent(locations[i].description)
+                    } else {
+                        infoWindow.setContent("no description")
+                    }
+                    infoWindow.open(map, marker)
+                  }
+                })(marker, i));
+
+              }
+            }
+
+
+
+
+
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {

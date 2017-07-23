@@ -63,8 +63,6 @@ class GamesController < ApplicationController
       gp.save!
   end
 
-
-
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
