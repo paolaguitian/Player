@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :start %>
-    <%= form.datetime_select :start, id: :game_start %>
+    <%= form.datetime_select :start, id: :game_start, ampm: true %>
   </div>
 
   <div class="field">
     <%= form.label :stop %>
-    <%= form.datetime_select :stop, id: :game_stop %>
+    <%= form.datetime_select :stop, id: :game_stop, ampm: true %>
   </div>
 
   <div class="field">
