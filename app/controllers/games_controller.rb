@@ -1,19 +1,39 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy, :join]
-  @@image_urls = {
+  @@image_urls = { #hash with game icon, key corresponds to param of game selection
     soccer: [
       'http://cdn.mysitemyway.com/icons-watermarks/simple-black/',
       'classica/classica_soccer-ball/',
-      'classica_soccer-ball_simple-black_512x512.png',
-    ].join,
-    basketball: [].join,
-    default: ['http://www.iconninja.com/',
-              'files/333/190/480/sport-handball-icon',
-              '.svg'].join
+      'classica_soccer-ball_simple-black_512x512.png',].join,
+
+    basketball: [
+      'http://szeszi.net/wp-content/',
+      'uploads/2015/09/Games.png'].join,
+
+    football: ['https://upload.wikimedia.org',
+      '/wikipedia/commons/a/ae/Football_Icon.svg'].join,
+
+    kickball: ['https://fxasports.com/wp-content/uploads',
+      '/2017/01/FXA-Sports-Kickball-Icon.jpg'].join,
+
+    frisbee: ['https://d30y9cdsu7xlg0.cloudfront.net/png/171542-200.png'].join,
+
+    volleyball: ['https://maxcdn.icons8.com/Share/icon/Sports//volleyball1600.png'].join,
+
+    baseball: ['https://cdn0.iconfinder.com/data/icons/',
+      'customicondesign-office6-shadow/256/baseball.png'].join,
+
+    yoga: ['https://image.flaticon.com/icons/png/512/84/84145.png'].join,
+
+
+    default:[ #default image -- CHANGE TO LOGO
+      'https://upload.wikimedia.org/',
+      'wikipedia/commons/thumb/0/0c/',
+      'Sport_balls.svg/2000px-Sport_balls.svg.png'].join
   }
-  dimension = '20'
+  dimension = '25' #sets dimesnion of icon
   # string 'widthxheight' for image_tag
-  @@dimensions = 2.times.map{ dimension }.join('x')
+  @@dimensions = 2.times.map{ dimension }.join('x') #puts size in format
   @@game_icon_image = @@image_urls[:default]
 
 
@@ -22,6 +42,8 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    #display games is an array that saves the game object with all info
+    #saved from param and image that corresoponds to the game
     @display_games = Game.all.map do |game|
       [
         game,

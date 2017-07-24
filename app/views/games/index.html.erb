@@ -31,6 +31,7 @@
   </thead>
 
   <tbody>
+    <!-- will display game info along with corresoponding image -->
     <% @display_games.each do |game, icon_url| %>
       <tr>
         <td><%= image_tag icon_url, size: @dimensions %><%= game.location %></td>
