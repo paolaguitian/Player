@@ -16,7 +16,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Games</h1>
-
+<p><%= image_tag @game_icon_image, size: @dimensions unless @game_icon_image.nil? %></p>
 <%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
 <table>
   <thead>
