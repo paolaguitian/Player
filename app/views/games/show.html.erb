@@ -13,12 +13,12 @@
 
 <p>
   <strong>Start:</strong>
-  <%= @game.start %>
+  <%= @game.start.strftime("%a, %B %d, %I:%M%P") %>
 </p>
 
 <p>
   <strong>Stop:</strong>
-  <%= @game.stop %>
+  <%= @game.stop.strftime("%a, %B %d, %I:%M%P") %>
 </p>
 
 <p>
