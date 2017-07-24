@@ -1,7 +1,5 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy, :join]
-  after_action :set_icon_url, only: [:create]
-
   @@image_urls = {
     soccer: [
       'http://cdn.mysitemyway.com/icons-watermarks/simple-black/',
@@ -24,7 +22,15 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
-    @game_icon_image = @@game_icon_image
+    @display_games = Game.all.map do |game|
+      [
+        game,
+        @@image_urls.fetch(
+        game.sport.downcase.to_sym,
+        @@image_urls[:default]),
+      ]
+    end
+    # @game_icon_image = @@game_icon_image
     @dimensions = @@dimensions
   end
 
@@ -96,10 +102,7 @@ class GamesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_icon_url
-      image_url_key = params[:game][:sport].downcase.to_sym  # params[:someoption]
-      @@game_icon_image = @@image_urls.fetch(image_url_key, @@image_urls[:default])
-    end
+
     def set_game
       @game = Game.find(params[:id])
     end

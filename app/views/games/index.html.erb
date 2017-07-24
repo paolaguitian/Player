@@ -31,9 +31,9 @@
   </thead>
 
   <tbody>
-    <% @games.each do |game| %>
+    <% @display_games.each do |game, icon_url| %>
       <tr>
-        <td><%= image_tag @game_icon_image, size: @dimensions unless @game_icon_image.nil? %><%= game.location %></td>
+        <td><%= image_tag icon_url, size: @dimensions %><%= game.location %></td>
         <td><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
         <td><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
         <td><%= game.name %></td>
