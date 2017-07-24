@@ -33,8 +33,10 @@
 
   <div class="field">
     <%= form.label :sport %>
-    <!-- <%= form.text_field :sport, id: :game_sport %> -->
-    <%= form.select(:sport,options_for_select([ ['SOCCER','SOCCER'],['BASKETBALL','BASKETBALL'] ])) %>
+    <%= form.select(:sport,options_for_select([['select one', nil],['SOCCER','SOCCER'],
+    ['BASKETBALL','BASKETBALL'],['FOOTBALL','FOOTBALL'],['KICKBALL','KICKBALL'],
+    ['FRISBEE','FRISBEE'],['VOLLEYBALL','VOLLEYBALL'],
+    ['BASEBALL/SOFTBALL','BASEBALL/SOFTBALL'],['YOGA','YOGA'],['OTHER','OTHER']])) %>
   </div>
 
   <div class="field">
