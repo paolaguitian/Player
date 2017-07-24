@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy, :join]
-  # after_action :set_icon_url, only: [:create, :index]
+  after_action :set_icon_url, only: [:create]
 
   @@image_urls = {
     soccer: [
@@ -9,10 +9,14 @@ class GamesController < ApplicationController
       'classica_soccer-ball_simple-black_512x512.png',
     ].join,
     basketball: [].join,
+    default: ['http://www.iconninja.com/',
+              'files/333/190/480/sport-handball-icon',
+              '.svg'].join
   }
   dimension = '100'
   # string 'widthxheight' for image_tag
   @@dimensions = 2.times.map{ dimension }.join('x')
+  @@game_icon_image = @@image_urls[:default]
 
 
   # GET /games
@@ -20,6 +24,8 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    @game_icon_image = @@game_icon_image
+    @dimensions = @@dimensions
   end
 
   # GET /games/1
@@ -92,8 +98,7 @@ class GamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_icon_url
       image_url_key = params[:game][:sport].downcase.to_sym  # params[:someoption]
-      @game_icon_image = @@image_urls[image_url_key]
-      @dimensions = @@dimensions
+      @@game_icon_image = @@image_urls[image_url_key]
     end
     def set_game
       @game = Game.find(params[:id])
