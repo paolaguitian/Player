@@ -13,7 +13,7 @@ class GamesController < ApplicationController
               'files/333/190/480/sport-handball-icon',
               '.svg'].join
   }
-  dimension = '100'
+  dimension = '20'
   # string 'widthxheight' for image_tag
   @@dimensions = 2.times.map{ dimension }.join('x')
   @@game_icon_image = @@image_urls[:default]
@@ -98,7 +98,7 @@ class GamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_icon_url
       image_url_key = params[:game][:sport].downcase.to_sym  # params[:someoption]
-      @@game_icon_image = @@image_urls[image_url_key]
+      @@game_icon_image = @@image_urls.fetch(image_url_key, @@image_urls[:default])
     end
     def set_game
       @game = Game.find(params[:id])
