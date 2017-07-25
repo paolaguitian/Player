@@ -13,8 +13,18 @@
  *= require_tree .
  *= require_self
  */
- body {
-   padding-top: 300px;
+ 
+.center, .jumbotron {
+background-color: rgba(255, 255, 255. 1);
+  background: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg);
+  background-size: cover;
+  color: white;
+}
+html, body {
+  background-color: rgba(255, 255, 255. 1)
+  background: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg);
+  margin: 0px;
+
  }
 
  section {
@@ -72,4 +82,11 @@ p {
   text-decoration: none;
 }
 
+#search-form {
 
+    display: inline-block;
+    right: 30px;
+    margin: 0px;
+    padding-top: 13px;
+    position: fixed;
+}
