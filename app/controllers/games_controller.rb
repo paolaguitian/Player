@@ -44,7 +44,7 @@ class GamesController < ApplicationController
     @games = Game.all
     #display games is an array that saves the game object with all info
     #saved from param and image that corresoponds to the game
-    @display_games = Game.all.map do |game|
+    @display_games = Game.all.order("created_at DESC").map do |game|
       [
         game,
         @@image_urls.fetch(
