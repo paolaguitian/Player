@@ -42,12 +42,14 @@
   <tbody>
     <!-- will display game info along with corresoponding image -->
     <% @display_games.each do |game, icon_url| %>
+
       <tr>
         <td><%= image_tag icon_url, size: @dimensions %><%= game.location %></td>
         <td><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
         <td><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
         <td><%= game.sport %></td>
         <td><%= game.description %></td>
+
 
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>

@@ -1,10 +1,19 @@
 //init map being called in partial through api call back. Loads map with current
 //locaiton and desired markers
 function initMap() {
+  var element = document.getElementById('game_location');
+  if (element) {
+    initAutocomplete()
+    return
+  }
+
+  var element = document.getElementById('map');
+  if (element === null) return;
+
   var map, infoWindow;
   map = new google.maps.Map(document.getElementById('map'), {
     //  center: {lat: -34.397, lng: 150.644},
-    zoom: 15
+    zoom: 13
   });
 
   infoWindow = new google.maps.InfoWindow;
@@ -68,14 +77,33 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 //being called from js appliaction load, loads and runs when it finds JQuery
 //targeted element
 function initAutocomplete() {
-  var autocomplete;
- // Create the autocomplete object, restricting the search to geographical
- // location types.
- autocomplete = new google.maps.places.Autocomplete(
-     (document.getElementById('game_location')),
-     {types: ['geocode']});
+  var element = document.getElementById('game_location');
+  if (element === null) return;
 
- // When the user selects an address from the dropdown, populate the address
- // fields in the form.
+  var autocomplete;
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+    (element),
+    {strictBounds: true});
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      console.log(geolocation)
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: 32186.9 // 20 miles in meters
+      });
+      console.log(circle)
+      autocomplete.setBounds(circle.getBounds());
+      console.log(autocomplete);
+    });
+  }
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
   // autocomplete.addListener('place_changed', fillInAddress);
 }
