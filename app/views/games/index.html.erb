@@ -23,7 +23,6 @@
       <th>Location</th>
       <th>Start</th>
       <th>Stop</th>
-      <th>Name</th>
       <th>Sport</th>
       <th>Description</th>
       <th colspan="3"></th>
@@ -37,7 +36,6 @@
         <td><%= image_tag icon_url, size: @dimensions %><%= game.location %></td>
         <td><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
         <td><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
-        <td><%= game.name %></td>
         <td><%= game.sport %></td>
         <td><%= game.description %></td>
 
