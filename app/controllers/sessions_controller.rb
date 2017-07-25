@@ -22,9 +22,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.where(username: params[:username]).first
-    if user && user.authenticate(params[:password])
-      login_user!(user)
+
+    @user = User.find_by(username: params[:username])
+    if @user && @user.authenticate(params[:password])
+      login_user!(@user)
     else
       flash.now[:error] = "Invalid username or password"
       render :new
@@ -40,7 +41,7 @@ class SessionsController < ApplicationController
   private
 
   def login_user!(user)
-    session[:user_id] = user.id
+    session[:user_id] = @user.id
     flash[:notice] = "Welcome, you're now logged in"
     redirect_to root_path
   end
