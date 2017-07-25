@@ -28,7 +28,6 @@ class GamesController < ApplicationController
 
     yoga: ['https://image.flaticon.com/icons/png/512/84/84145.png'].join,
 
-
     default:[ #default image -- CHANGE TO LOGO
       'https://upload.wikimedia.org/',
       'wikipedia/commons/thumb/0/0c/',
@@ -47,7 +46,13 @@ class GamesController < ApplicationController
     @games = Game.all
     #display games is an array that saves the game object with all info
     #saved from param and image that corresoponds to the game
-    @display_games = Game.all.order("created_at DESC").map do |game|
+    search_string = params[:search]
+    if search_string.nil? || search_string.empty?
+      results = Game.all.order("created_at DESC")
+    elsif params[:search]
+      results = Game.search(search_string).order("created_at DESC")
+    end
+    @display_games = results.map do |game|
       [
         game,
         @@image_urls.fetch(
@@ -128,7 +133,6 @@ class GamesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-
     def set_game
       @game = Game.find(params[:id])
     end
