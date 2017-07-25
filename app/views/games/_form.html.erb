@@ -26,17 +26,13 @@
     <%= form.datetime_select :stop, id: :game_stop, ampm: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :game_name %>
-  </div>
 
   <div class="field">
     <%= form.label :sport %>
     <%= form.select(:sport,options_for_select([['select one', nil],['SOCCER','SOCCER'],
     ['BASKETBALL','BASKETBALL'],['FOOTBALL','FOOTBALL'],['KICKBALL','KICKBALL'],
     ['FRISBEE','FRISBEE'],['VOLLEYBALL','VOLLEYBALL'],
-    ['BASEBALL/SOFTBALL','BASEBALL/SOFTBALL'],['YOGA','YOGA'],['OTHER','OTHER']])) %>
+    ['BASEBALL/SOFTBALL','BASEBALL/SOFTBALL'],['BICKING','BICKING'],['YOGA','YOGA'],['OTHER','OTHER']])) %>
   </div>
 
   <div class="field">

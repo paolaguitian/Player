@@ -20,6 +20,9 @@ class GamesController < ApplicationController
 
     volleyball: ['https://maxcdn.icons8.com/Share/icon/Sports//volleyball1600.png'].join,
 
+    bicking: ['https://d30y9cdsu7xlg0.cloudfront.net/png/29955-200.png'].join,
+
+
     baseball: ['https://cdn0.iconfinder.com/data/icons/',
       'customicondesign-office6-shadow/256/baseball.png'].join,
 
@@ -44,7 +47,7 @@ class GamesController < ApplicationController
     @games = Game.all
     #display games is an array that saves the game object with all info
     #saved from param and image that corresoponds to the game
-    @display_games = Game.all.map do |game|
+    @display_games = Game.all.order("created_at DESC").map do |game|
       [
         game,
         @@image_urls.fetch(
