@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "Player", root_path, id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '/login' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
   <%= csrf_meta_tags %>
   <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
   </script>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <%= stylesheet_link_tag    'application', media: 'all',
-  'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYsFrnvKIEmREiU0uHWk0SI-KnU7J1cbc&libraries=places&location=-33.8670522,151.1957362&radius=500&callback=initAutocomplete"> </script> -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYsFrnvKIEmREiU0uHWk0SI-KnU7J1cbc&libraries=places&callback=initMap"> </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +31,19 @@
   </style>
   </head>
   <body>
+
+    <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "Player", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Help",   '#' %></li>
+          <li><%= link_to "Log in", '/login' %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
     <%= yield %>
 
