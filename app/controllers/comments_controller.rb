@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :find_game
-  before_action :find_comment, only: [:destroy, :edit, :update]
+  before_action :find_comment, only: [:destroy, :edit, :update, :comment_owner]
+  before_action :comment_owner, only: [:destroy, :edit, :update]
+
   def create
     @comment = @game.comments.create(params[:comment].permit(:content))
     @comment.user_id = current_user.id
@@ -15,7 +17,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to games_path(@game)
+    redirect_to game_path(@game)
   end
 
   def edit
@@ -23,7 +25,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(params[:comment].permit(:content))
-      redirect_to game_path(@post)
+      redirect_to game_path(@game)
     else
       render 'edit'
     end
@@ -37,5 +39,12 @@ class CommentsController < ApplicationController
 
   def find_comment
     @comment = @game.comments.find(params[:id])
+  end
+
+  def comment_owner
+    unless current_user.id == @comment.user_id
+      flash[:notice] = "you shall not pass"
+      redirect_to @game
+    end
   end
 end
