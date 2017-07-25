@@ -59,7 +59,8 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    @join_users = @game.users
+    # @join_users = @game.users
+    @comments = Comment.where(game_id: @game).order('created_at DESC')
   end
 
   # GET /games/new
