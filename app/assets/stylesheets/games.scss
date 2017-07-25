@@ -3,3 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
+
+h1 {
+padding-top: 25px;
+text-align: left;
+}
+
+.container-games {
+	background: white;
+}
+
+thead {
+	text-align: left;
+	padding: 0px;
+}
+
+#location {
+	padding-left: 10px;
+}
+
+#start{
+	padding-left: 10px;
+} 
+
+#stop{
+	padding-left: 10px;
+} 
+
+#sport{
+		padding-left: 10px;
+
+}
+
+#player{
+		padding-left: 10px;
+
+}
+
+#description{
+	padding-left: 10px;
+}

@@ -14,7 +14,7 @@
  *= require_self
  */
  body {
-   padding-top: 60px;
+   padding-top: 300px;
  }
 
  section {
@@ -71,3 +71,5 @@ p {
   color: #fff;
   text-decoration: none;
 }
+
+

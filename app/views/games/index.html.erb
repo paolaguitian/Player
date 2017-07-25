@@ -10,21 +10,31 @@
 
   <%= link_to "Sign up now!", '/signup', class: "btn btn-lg btn-primary" %>
 </div>
+
+<div class="container-map">
+<h1>Where are you?</h1>
+</div>
 <%= render 'map' %>
+
+
 <!-- <%= link_to image_tag("rails1.png", alt: "Rails logo"),
             'http://rubyonrails.org/' %> -->
 <p id="notice"><%= notice %></p>
+
+
+<div class="container-games">
 
 <h1>Games</h1>
 <%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
 <table>
   <thead>
     <tr>
-      <th>Location</th>
-      <th>Start</th>
-      <th>Stop</th>
-      <th>Sport</th>
-      <th>Description</th>
+      <th id="location">Location</th>
+      <th id="start">Start</th>
+      <th id="stop">Stop</th>
+      <th id="sport">Sport</th>
+        <th id="player">Player</th>
+      <th id="description">Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -45,9 +55,12 @@
 
       </tr>
     <% end %>
+
+
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Game', new_game_path %>
+<button><%= link_to 'New Game', new_game_path %></button>
