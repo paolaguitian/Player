@@ -10,14 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170726205642) do
-=======
-ActiveRecord::Schema.define(version: 20170725145610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
->>>>>>> 5c34ae88457130ac051d6fec4a1e4f94988db68d
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -30,13 +26,8 @@ ActiveRecord::Schema.define(version: 20170725145610) do
   end
 
   create_table "game_players", force: :cascade do |t|
-<<<<<<< HEAD
-    t.integer "game_id"
-    t.integer "user_id"
-=======
     t.bigint "game_id"
     t.bigint "user_id"
->>>>>>> 5c34ae88457130ac051d6fec4a1e4f94988db68d
     t.boolean "host"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170725145610) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
@@ -70,4 +61,5 @@ ActiveRecord::Schema.define(version: 20170725145610) do
   add_foreign_key "comments", "users"
   add_foreign_key "game_players", "games"
   add_foreign_key "game_players", "users"
+  add_foreign_key "games", "users"
 end
