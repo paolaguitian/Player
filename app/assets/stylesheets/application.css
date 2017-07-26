@@ -18,6 +18,7 @@
 background-color: rgba(255, 255, 255. 1);
   background: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg);
   background-size: cover;
+  background-position-y: 300px;
   color: white;
 }
 html, body {
