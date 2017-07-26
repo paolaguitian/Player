@@ -14,7 +14,9 @@ class Game < ApplicationRecord
 
 #search method for search ability
   def self.search(search)
-    where("location LIKE ? OR description LIKE ? OR sport LIKE ?",
+    p "<>"*20
+    p search
+    where("location iLIKE ? OR description iLIKE ? OR sport iLIKE ?",
       "%#{search}%", "%#{search}%", "%#{search}%")
   end
 end
