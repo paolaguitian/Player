@@ -4,12 +4,36 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 
+
+
+.search-box {
+	padding-left: 44%;
+	padding-top: 20%;
+}
+
+.width {
+	height: 100%;
+    margin: 0px;
+    padding: 0;
+}
+
+.background-home {
+background-image: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg); 
+background-position: center;
+background-size: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+margin: 0px;
+}
+
 h1 {
 padding-top: 25px;
 text-align: left;
 }
 
 .container-games {
+	padding-top: 30px;
+	color: black;
 	background: white;
 }
 

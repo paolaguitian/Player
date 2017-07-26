@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'games#index'
+  root 'games#home'
+  get '/index'	=> 'games#index'
    resources :games
 
   # root 'users#index'

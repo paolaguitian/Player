@@ -1,20 +1,15 @@
 
-<div class="center jumbotron">
+<!-- <div class="center jumbotron">
   <h1>Welcome to the Player App</h1>
 
-  <!-- <h2>
+  <h2>
     This is the home page for the
     <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
     sample application.
-  </h2> -->
+  </h2>
 
   <%= link_to "Sign up now!", '/signup', class: "btn btn-lg btn-primary" %>
-</div>
-
-<div class="container-map">
-<h1>Where are you?</h1>
-</div>
-<%= render 'map' %>
+</div> -->
 
 
 <!-- <%= link_to image_tag("rails1.png", alt: "Rails logo"),
@@ -22,48 +17,56 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="container-games">
+<!-- <div class="container-games"> -->
 
-<h1>Games</h1>
-<%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
-<table>
-  <!-- <thead>
-    <tr>
-      <th id="location">Location</th>
-      <th id="start">Start</th>
-      <th id="stop">Stop</th>
-      <th id="sport">Sport</th>
-        <th id="player">Player</th>
-      <th id="description">Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead> -->
 
-  <tbody>
-    <!-- will display game info along with corresoponding image -->
-    <% @display_games.each do |game, icon_url| %>
-
+  <h1>Games</h1>
+  <%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
+  <div class="container-games">
+  <table>
+    <!-- <thead>
       <tr>
-        <td><%= image_tag icon_url, size: @dimensions %></td>
-        <td id="location"><%= game.location %></td>
-        <td id="location"><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
-        <td id="location"><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
-        <td id="location"><%= game.sport %></td>
-        <td id="location"><%= game.description %></td>
-
-
-        <td><%#= link_to 'Show', game %></td>
-        <td><%#= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%#= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+        <th id="location">Location</th>
+        <th id="start">Start</th>
+        <th id="stop">Stop</th>
+        <th id="sport">Sport</th>
+          <th id="player">Player</th>
+        <th id="description">Description</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
+    </thead> -->
+
+    <tbody>
+      <!-- will display game info along with corresoponding image -->
+      <% @display_games.each do |game, icon_url| %>
+
+        <tr>
+          <td><%= image_tag icon_url, size: @dimensions %></td>
+          <td id="location"><%= game.location %></td>
+          <td id="location"><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
+          <td id="location"><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
+          <td id="location"><%= game.sport %></td>
+          <td id="location"><%= game.description %></td>
 
 
-  </tbody>
-</table>
+          <td><%#= link_to 'Show', game %></td>
+          <td><%#= link_to 'Edit', edit_game_path(game) %></td>
+          <td><%#= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        </tr>
+      <% end %>
+
+
+    </tbody>
+  </table>
+  </div>
 </div>
 
 <br>
 
 <button><%= link_to 'New Game', new_game_path %></button>
+
+<div class="container-map">
+<h1>Where are you?</h1>
+</div>
+<%= render 'map' %>

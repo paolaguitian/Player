@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html class="width">
+<head>
+	<title></title>
+</head>
+<body class="background-home">
+	<div class="search-box">
+ 	 <%= form_tag(games_path, :method => "get") do %>
+           <%= search_field_tag :search, params[:search], placeholder: "Search Player, Zipcode, Location" %>
+           <%= submit_tag 'Search' %>
+           <% end %>
+	</div>
+
+</body>
+</html>
