@@ -1,0 +1,7 @@
+$('.modal-body').html("<%= j render 'form', game: @game%>")
+// target the modal body in out index , then render the form that was origially in
+//  our edit page and use the  @task to display what we will edit....basically
+//  put the entire edit page into a little pop up box,and all
+
+// edditing is done in the box.
+$('.modal').modal();
