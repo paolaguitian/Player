@@ -2,8 +2,11 @@ $('.modal-body').html("<p><strong>Location:</strong><%=@game.location%></p>" +
 "<p><strong>Start: </strong><%= @game.start.strftime("%a, %B %d, %I:%M%P") %></p>"+
 "<p><strong>Stop:</strong><%= @game.stop.strftime("%a, %B %d, %I:%M%P") %></p>" +
 "<p><strong>Sport: </strong><%=@game.sport%></p>" +
-"<p><strong>Description: </strong><%= @game.description %></p>"
-)
+"<p><strong>Description: </strong><%= @game.description %></p> ")
+
+$('.modal-body').append("<%= escape_javascript render(:partial => 'comments/comment') %>");
+
+
 $('.modal-body form').find('.actions').find('input[type=submit]').remove();
 
 $('.modal').modal();
