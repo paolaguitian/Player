@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :authorize, except: [:index]
   before_action :set_game, only: [:show, :edit, :update, :destroy, :join]
   @@image_urls = { #hash with game icon, key corresponds to param of game selection
     soccer: [
@@ -41,6 +42,9 @@ class GamesController < ApplicationController
 
   # GET /games
   # GET /games.json
+def user
+  @user = Game.current_user
+end
 
   def index
     @games = Game.all
@@ -74,7 +78,6 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
-
   end
 
   # GET /games/1/edit
@@ -85,8 +88,10 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
+    @game.user = current_user
     respond_to do |format|
       if @game.save
+        current_user.games << @game
         # gp = GamePlayer.new #this activates the join table we need
         # gp.user_id = @current_user.id
         # gp.game_id = @game.id
