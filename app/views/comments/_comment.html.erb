@@ -1,0 +1,14 @@
+<h2>This post has <%= pluralize(@comments.count, "Reply") %> </h2>
+
+<% @comments.each do |comment| %>
+
+<p><b> <%= comment.user.username %> </b></p>
+<p> <%= comment.content  %> </p>
+
+<% if current_user == comment.user %>
+  <%= link_to "Delete comment", [comment.game, comment], method: :delete %>
+  <%= link_to "Edit comment", edit_game_comment_path(comment.game, comment) %>
+  <% end %>
+<% end %>
+
+<%= render 'comments/form' %>

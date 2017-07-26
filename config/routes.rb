@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'games#home'
   get '/index'	=> 'games#index'
    resources :games
+=======
+  root 'games#index'
+   resources :games do
+     resources :comments
+   end
+>>>>>>> 5c34ae88457130ac051d6fec4a1e4f94988db68d
 
   # root 'users#index'
   # resources :users
