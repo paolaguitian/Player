@@ -10,7 +10,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -34,6 +33,7 @@
 <p id="notice"><%= notice %></p>
 
 
+<<<<<<< HEAD
 <!-- <div class="container-games"> -->
 
 
@@ -80,6 +80,24 @@
   </table>
   </div>
 </div>
+
+        <tr>
+          <td><%= image_tag icon_url, size: @dimensions %><%= game.location %></td>
+          <td><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
+          <td><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
+          <td><%= game.sport %></td>
+          <td><%= game.description %></td>
+
+<!--         <td><%#= link_to 'Show', game , remote: true%></td>
+        <td><%#= link_to 'Edit', edit_game_path(game), remote: true %></td>
+        <td><%#= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <br>
 
