@@ -3,3 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
+
+#map{
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
