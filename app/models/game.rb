@@ -12,9 +12,10 @@ class Game < ApplicationRecord
 
 
 
-#search method for search ability
+  #search method for search ability
   def self.search(search)
     where("location LIKE ? OR description LIKE ? OR sport LIKE ?",
-      "%#{search}%", "%#{search}%", "%#{search}%")
+    "%#{search}%", "%#{search}%", "%#{search}%")
   end
+
 end
