@@ -42,6 +42,9 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
 
+  def home
+  end
+
   def index
     @games = Game.all
     #display games is an array that saves the game object with all info
