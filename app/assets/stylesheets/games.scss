@@ -4,8 +4,12 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 
-<<<<<<< HEAD
 
+/*html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+}*/
 
 .search-box {
 	padding-left: 44%;
@@ -18,6 +22,18 @@
     padding: 0;
 }
 
+.head-bar {
+    background-image: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 25%;
+    padding: 0px;
+    margin-top: 41px;
+}
+
 .background-home {
 background-image: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg); 
 background-position: center;
@@ -27,15 +43,26 @@ background-size: cover;
 margin: 0px;
 }
 
-h1 {
-padding-top: 25px;
+#type-left {
+padding-left: 30px;
+padding-top: 30px;
 text-align: left;
+margin-top: 0px;
+}
+
+.signup-box {
+	background-color: white;
 }
 
 .container-games {
 	padding-top: 30px;
 	color: black;
 	background: white;
+}
+
+form {
+
+	padding-left: 40px;
 }
 
 table {
@@ -88,10 +115,9 @@ img {
     position: absolute;
     vertical-align: middle;
 }
-=======
+
 #map{
   position: relative;
   overflow: hidden;
   margin: 0 auto;
 }
->>>>>>> ce5829f7a9d08d5873563d4f8cfdfab41aedb5cb
