@@ -21,7 +21,7 @@ class GamesController < ApplicationController
 
     volleyball: ['https://maxcdn.icons8.com/Share/icon/Sports//volleyball1600.png'].join,
 
-    bicking: ['https://d30y9cdsu7xlg0.cloudfront.net/png/29955-200.png'].join,
+    biking: ['https://d30y9cdsu7xlg0.cloudfront.net/png/29955-200.png'].join,
 
 
     baseball: ['https://cdn0.iconfinder.com/data/icons/',
@@ -66,6 +66,9 @@ end
     end
     # @game_icon_image = @@game_icon_image
     @dimensions = @@dimensions
+  end
+
+  def home
   end
 
   # GET /games/1

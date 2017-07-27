@@ -3,7 +3,131 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
+/*html, body {
+   height: 100%;
+   margin: 0px;
+   padding: 0;
+}*/
 
+h1 #title{
+  color: white;
+  padding-left: 20%;
+  padding-top: 20%;
+}
+
+
+.btn-default{
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  float: right;
+}
+.search-box {
+    padding-left: 20%;
+    padding-top: 20%;
+}
+
+
+.width {
+    height: 100%;
+   margin: 0px;
+   padding: 0;
+}
+
+.head-bar {
+   background-image: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg);
+   background-position: center;
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin: 0px;
+   height: 25%;
+   padding: 0px;
+   margin-top: 41px;
+}
+
+.background-home {
+background-image: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg);
+background-position: center;
+background-size: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+margin: 0px;
+}
+
+#type-left {
+padding-left: 30px;
+padding-top: 30px;
+text-align: left;
+margin-top: 0px;
+}
+
+.signup-box {
+    background-color: white;
+    padding-left: 30px;
+}
+
+.container-games {
+    padding-top: 30px;
+    color: black;
+    background: white;
+}
+
+form {
+
+    padding-left: 40px;
+}
+
+table {
+    margin-left: 100px;
+   background-color: transparent;
+}
+
+thead {
+    text-align: left;
+    padding: 0px;
+}
+
+#location {
+    padding-left: 10px;
+}
+
+#start{
+    padding-left: 10px;
+}
+
+#stop{
+    padding-left: 10px;
+}
+
+#sport{
+        padding-left: 10px;
+
+}
+
+#player{
+        padding-left: 10px;
+
+}
+
+#description{
+    padding-left: 10px;
+}
+
+#location{
+    padding-left: 120px;
+}
+
+td {
+    display: flex;
+}
+
+img {
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   vertical-align: middle;
+}
 #map{
   position: relative;
   overflow: hidden;
