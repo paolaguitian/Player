@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" role="dialog">
+d<div class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -23,23 +23,15 @@
 <h1>Games</h1>
 <%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
 <table>
-  <thead>
-    <tr>
-      <th>Location</th>
-      <th>Start</th>
-      <th>Stop</th>
-      <th>Sport</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
 
   <tbody>
     <!-- will display game info along with corresoponding image -->
     <% @display_games.each do |game, icon_url| %>
 
         <tr>
-          <td><%= image_tag icon_url, size: @dimensions %><%= game.location %></td>
+          <td><%= image_tag icon_url, size: @dimensions %></td>
+          <td><%= game.location %></td>
           <td><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
           <td><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
           <td><%= game.sport %></td>
