@@ -18,8 +18,8 @@ function initMap() {
 
   infoWindow = new google.maps.InfoWindow;
   var locations = JSON.parse($('#games_lat_and_lng').val())
-    var i;
-      for(loc of locations){
+  console.log(locations);
+          for(let loc of locations){
         if( loc.lat !== null && loc.lng !== null ){
 
           var myLatLng = {lat: loc.lat, lng: loc.lng};
@@ -29,16 +29,16 @@ function initMap() {
             title: 'Hello World!'
           })
 
-          google.maps.event.addListener(marker, 'click', (function(marker, i){
+          google.maps.event.addListener(marker, 'click', (function(marker){
             return function() {
-              if( locations[i] !== undefined && locations[i].description !== undefined) {
-                infoWindow.setContent(locations[i].description)
+              if( loc !== undefined && loc.description !== undefined) {
+                infoWindow.setContent(loc.description)
               } else {
                   infoWindow.setContent("no description")
               }
               infoWindow.open(map, marker)
             }
-          })(marker, i));
+          })(marker));
 
         }
       }
