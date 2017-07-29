@@ -144,11 +144,11 @@ margin-top: 0px;
     background: white;
     margin: 0 auto;
 }
-
-form {
+/*overriding the form on users signin page*/
+/*form {
 
 	padding-left: 40px;
-}
+}*/
 
 table {
     background-color: transparent;
@@ -188,13 +188,13 @@ td {
 	border-bottom-color: 5px black;
 }
 
-img {
+/*img {
     width: 100px;
     height: 100px;
     position: absolute;
     vertical-align: middle;
-    margin-top: 10px;
-}
+    
+}*/
 
 #description{
     padding-left: 10px;
@@ -209,12 +209,12 @@ td {
 }
 
 img {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  vertical-align: middle;
-  top: 11vh;
-  left: 32%;
+    width: 30%;
+    height: 30%;
+    position: relative;
+    vertical-align: middle;
+    top: 14vh;
+    margin-top: -68px;
   //  margin-left: 350px;
   //  margin-top: 15%;
   //  margin-bottom: 0px;
@@ -390,11 +390,11 @@ img {
 }
 
 .container-map {
-    background: white;
+    background: #ffffff;
     position: fixed;
-    padding-top: 23px;
+    padding-top: 103px;
     width: 100%;
-    margin-top: 72px;
+    margin-top: 0px;
     z-index: 1000;
 
 }
@@ -405,9 +405,10 @@ tr {
 }
 
 #show {
-	display: inline-block;
-	float: right;
-	margin-top: -30px;
+    display: inline-block;
+    float: right;
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
 
@@ -420,6 +421,10 @@ tr {
     padding: 5px;
 
 }
+ #new {
+  margin-bottom: 10%;
+ }
+
 
 /*#show-game {
     color: #5cb85c;

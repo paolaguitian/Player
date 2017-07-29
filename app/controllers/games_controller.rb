@@ -30,9 +30,7 @@ class GamesController < ApplicationController
     yoga: ['https://image.flaticon.com/icons/png/512/84/84145.png'].join,
 
     default:[ #default image -- CHANGE TO LOGO
-      'https://upload.wikimedia.org/',
-      'wikipedia/commons/thumb/0/0c/',
-      'Sport_balls.svg/2000px-Sport_balls.svg.png'].join
+      "playerlogo.png"].join
   }
   dimension = '25' #sets dimension of icon
   # string 'widthxheight' for image_tag

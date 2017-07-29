@@ -22,7 +22,7 @@ a{color:inherit;text-decoration:none}
 .login-html{
     width:100%;
     height:100%;
-    position:absolute;
+    position:relative;
     padding:90px 70px 50px 70px;
     background:rgba(40,57,101,.9);
 }
@@ -149,7 +149,7 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
     text-align:center;
 }
-=======
+
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -182,15 +182,17 @@ th {
   padding-left: 100px
 }
 
-form {
-  margin: 0px;
-  padding-top: 50px;
-  margin: 0px;
-  padding-top: 90px;
-  display: inline-grid;
-  padding-left: 26px;
-}
+ 
 
+form {
+  padding-top: 50px;
+  /*margin: 0px;*/
+  /*margin: 0px;*/
+  /*padding-top: 90px;*/
+  /*display: inline-grid;*/
+  /*padding-left: 26px;*/
+
+}
 
 
 #contact input[type="text"],
