@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :authorize, except: [:index]
+  before_action :authorize, except: [:home]
   before_action :set_game, only: [:show, :edit, :update, :destroy, :join]
   @@image_urls = { #hash with game icon, key corresponds to param of game selection
     soccer: [
