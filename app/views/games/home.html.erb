@@ -1,17 +1,24 @@
-<html class="width">
-<head>
-    <title></title>
-</head>
 
-<button type="button" class="btn btn-default">Log In</button>
-<button type="button" class="btn btn-default">Sign up</button>
-<body class="background-home">
-    <div class="search-box">
-     <%= form_tag(games_path, :method => "get") do %>
-     <%= search_field_tag :search, params[:search], placeholder: "Search Sport" %><%= search_field_tag :search, params[:search], placeholder: "Search Zipcode, Location" %>
-          <%= submit_tag 'Search' %>
-          <% end %>
+  <div class = "top">
+
+  <div class = "login">
+    <button type="button" class="btn btn-default">Log In</button>
+    <button type="button" class="btn btn-default">Sign up</button>
+  </div>
+
+    <div class="logo-search">
+      <img src ="assets/playerlogo.png"></img>
+
+      <div class="search-box">
+       <%= form_tag(games_path, :method => "get") do %>
+         <div class = "form-group">
+           <%= search_field_tag :search, params[:search], placeholder: "Search Sport" , class:"form-control"%>
+         </div>
+         <div class = "form-group">
+           <%= search_field_tag :search, params[:search], placeholder: "Search Zipcode, Location" , class:"form-control"%>
+         </div>
+         <%= submit_tag 'Search', class: "btn btn-block btn-sm btn-success" %>
+        <% end %>
+      </div>
     </div>
-
-</body>
-</html>
+  </div>
