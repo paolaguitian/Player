@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :authorize, except: [:home]
   before_action :set_game, only: [:show, :edit, :update, :destroy, :join]
   @@image_urls = { #hash with game icon, key corresponds to param of game selection
     soccer: [
@@ -20,7 +21,7 @@ class GamesController < ApplicationController
 
     volleyball: ['https://maxcdn.icons8.com/Share/icon/Sports//volleyball1600.png'].join,
 
-    bicking: ['https://d30y9cdsu7xlg0.cloudfront.net/png/29955-200.png'].join,
+    biking: ['https://d30y9cdsu7xlg0.cloudfront.net/png/29955-200.png'].join,
 
 
     baseball: ['https://cdn0.iconfinder.com/data/icons/',
@@ -41,6 +42,9 @@ class GamesController < ApplicationController
 
   # GET /games
   # GET /games.json
+def user
+  @user = Game.current_user
+end
 
   def home
   end
@@ -67,6 +71,9 @@ class GamesController < ApplicationController
     @dimensions = @@dimensions
   end
 
+  def home
+  end
+
   # GET /games/1
   # GET /games/1.json
   def show
@@ -77,7 +84,6 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
-
   end
 
   # GET /games/1/edit
@@ -88,8 +94,10 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
+    @game.user = current_user
     respond_to do |format|
       if @game.save
+        current_user.games << @game
         # gp = GamePlayer.new #this activates the join table we need
         # gp.user_id = @current_user.id
         # gp.game_id = @game.id
@@ -133,6 +141,7 @@ class GamesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

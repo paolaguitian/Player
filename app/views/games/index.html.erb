@@ -1,14 +1,4 @@
 
-
-
-
-<!DOCTYPE html>
-
-<html>
-
-<head>
-  <title>Gameboard</title>
-</head>
 <div class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -45,6 +35,7 @@
       <!-- will display game info along with corresoponding image -->
       <div><% @display_games.each do |game, icon_url| %></div>
 
+
         <div><tr>
           <td><%= image_tag icon_url, size: @dimensions %></td>
           <td id="location"><%= game.location %></td>
@@ -70,12 +61,3 @@
   <br>
    <button type="button" class="btn btn-outline-success"><%= link_to 'New Game', new_game_path %></button>
 </div>
-
-       
-
-
-
-
-
-</body>
-</html>
