@@ -19,12 +19,13 @@ class SessionsController < ApplicationController
   # end
 
   def new
+    @user = User.new
   end
 
   def create
 
-    @user = User.find_by(username: params[:username])
-    if @user && @user.authenticate(params[:password])
+    @user = User.find_by(username: params[:user][:username])
+    if @user && @user.authenticate(params[:user][:password])
       login_user!(@user)
     else
       flash.now[:error] = "Invalid username or password"

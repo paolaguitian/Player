@@ -1,46 +1,57 @@
-<%= form_with(model: game, local: true) do |form| %>
-  <% if game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+<div class="game-wrap">
+  <div class="game-html">
+    <input class="game-in"><label for="tab-1" class="tab">New Game</label>
 
-      <ul>
-      <% game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                  <%= form_with(model: game, local: true) do |form| %>
+                  <% if game.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+                    <ul>
+                      <% game.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                  <% end %>
+
+    <div class="group">
+      <label for="user" class="label">location</label>
+      <%= form.text_field :location, id: :game_location, class: "input" %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location, id: :game_location %>
+    <div class="group">
+      <label for="user" class="label">Start</label>
+      <%= form.datetime_select :start, id: :game_start, ampm: true, class: "input" %>
+    </div>
+
+    <div class="group">
+      <label for="user" class="label">Stop</label>
+      <%= form.datetime_select :stop, id: :game_stop, ampm: true, class: "input" %>
+    </div>
+
+    <div class="group">
+      <div >
+      <label for="user" class="label">Sport</label>
+
+      <%= form.select(:sport,options_for_select([['select one', nil],['SOCCER','SOCCER'],
+      ['BASKETBALL','BASKETBALL'],['FOOTBALL','FOOTBALL'],['KICKBALL','KICKBALL'],
+      ['FRISBEE','FRISBEE'],['VOLLEYBALL','VOLLEYBALL'],
+      ['BASEBALL/SOFTBALL','BASEBALL/SOFTBALL'],['BIKING','BIKING'],['YOGA','YOGA'],['OTHER','OTHER']]),{},{id: "options"}) %>
+
+    </div>
+</div>
+
+    <div class="disc">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: :game_description , placeholder: "Location Details, Attire Details so that other players can find you,Age Range, Skill Level"%>
+    </div>
+
+    <div class="group">
+      <%= form.submit class: "button" %>
+    </div>
+
+
+    <% end %>
+
   </div>
-
-  <div class="field">
-    <%= form.label :start %>
-    <%= form.datetime_select :start, id: :game_start, ampm: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :stop %>
-    <%= form.datetime_select :stop, id: :game_stop, ampm: true %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :sport %>
-    <%= form.select(:sport,options_for_select([['select one', nil],['SOCCER','SOCCER'],
-    ['BASKETBALL','BASKETBALL'],['FOOTBALL','FOOTBALL'],['KICKBALL','KICKBALL'],
-    ['FRISBEE','FRISBEE'],['VOLLEYBALL','VOLLEYBALL'],
-    ['BASEBALL/SOFTBALL','BASEBALL/SOFTBALL'],['BIKING','BIKING'],['YOGA','YOGA'],['OTHER','OTHER']])) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :game_description , placeholder: "Location Details, Attire Details so that other players can find you,Age Range, Skill Level"%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
