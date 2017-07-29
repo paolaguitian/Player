@@ -21,7 +21,7 @@ body {
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  background: #4CAF50;
+  background: white;
 }
 
 
@@ -33,14 +33,13 @@ th {
 form {
   margin: 0px;
   padding-top: 50px;
+  margin: 0px;
+  padding-top: 90px;
+  display: inline-grid;
+  padding-left: 26px;
 }
 
-.container {
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
+
 
 #contact input[type="text"],
 #contact input[type="email"],

@@ -3,16 +3,18 @@
 <head>
 	<title></title>
 </head>
+
 <body class="width">
-<div class="head-bar"></div>
-<div class="signup-box">
+	<div class="head-bar"></div>
 
-<h1 id="type-left">New Game</h1>
+	<div class="signup-box">
+	
+	<h1 id="type-left">New Game</h1>
 
-<%= render 'form', game: @game %>
+	<%= render 'form', game: @game %>
 
-<%= link_to 'Back', games_path %>
-</div>
+	<%= link_to 'Back', games_path %>
+	</div>
 
 </body>
 </html>

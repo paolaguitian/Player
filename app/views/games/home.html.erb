@@ -6,7 +6,8 @@
 <body class="background-home">
 	<div class="search-box">
  	 <%= form_tag(games_path, :method => "get") do %>
- 	 <%= search_field_tag :search, params[:search], placeholder: "Search Player, Zipcode, Location" %><%= search_field_tag :search, params[:search], placeholder: "Search Player, Zipcode, Location" %>
+ 	 <%= search_field_tag :search, params[:search], placeholder: "Search Sport" %>
+ 	 <%= search_field_tag :search, params[:search], placeholder: "Search Zipcode, Location" %>
            <%= submit_tag 'Search' %>
            <% end %>
 	</div>

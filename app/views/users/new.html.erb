@@ -1,12 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="signup-background">
 
-<h1>Signup!</h1>
-
-<%= form_for :user, url: '/users' do |f| %>
+<div id="login"><%= form_for :user, url: '/users' do |f| %>
 
   Name: <%= f.text_field :username %>
   Email: <%= f.text_field :email %>
   Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  Password Confirmation: <%= f.password_field :password_confirmation %></div>
+  <button id="signup-submit" type="button" class="btn btn-outline-success"><%= f.submit "Submit" %></button>
 
-<% end %>
+  <% end %></div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
