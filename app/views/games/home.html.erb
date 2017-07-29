@@ -1,24 +1,30 @@
 
-  <div class = "top">
+<div class = "top">
 
   <div class = "login">
-    <button type="button" class="btn btn-default">Log In</button>
-    <button type="button" class="btn btn-default">Sign up</button>
+    <ul class = "top-nav">
+    <%- if current_user %>
+    <li> <button type="button" class="btn btn-default"> <%= link_to "Logout", logout_path%> </button></li>
+    <% else %>
+    <li> <button type="button" class="btn btn-default">  <%= link_to "Login", login_path %> </button></li>
+    <li> <button type="button" class="btn btn-default">    <%= link_to "Register", signup_path %> </button></li>
+    <% end %>
+  </ul>
   </div>
 
-    <div class="logo-search">
-      <img src ="assets/playerlogo.png"></img>
+  <div class="logo-search">
+    <img src ="assets/playerlogo.png"></img>
 
-      <div class="search-box">
-       <%= form_tag(games_path, :method => "get") do %>
-         <div class = "form-group">
-           <%= search_field_tag :search, params[:search], placeholder: "Search Sport" , class:"form-control"%>
-         </div>
-         <div class = "form-group">
-           <%= search_field_tag :search, params[:search], placeholder: "Search Zipcode, Location" , class:"form-control"%>
-         </div>
-         <%= submit_tag 'Search', class: "btn btn-block btn-sm btn-success" %>
-        <% end %>
+    <div class="search-box">
+      <%= form_tag(games_path, :method => "get") do %>
+      <div class = "form-group">
+        <%= search_field_tag :search, params[:search], placeholder: "Search Sport" , class:"form-control"%>
       </div>
+      <div class = "form-group">
+        <%= search_field_tag :search, params[:search], placeholder: "Search Zipcode, Location" , class:"form-control"%>
+      </div>
+      <%= submit_tag 'Search', class: "btn btn-block btn-sm btn-success" %>
+      <% end %>
     </div>
   </div>
+</div>
