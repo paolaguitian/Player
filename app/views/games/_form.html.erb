@@ -21,12 +21,12 @@
 
     <div class="group">
       <label for="user" class="label">Start</label>
-      <%= form.datetime_select :start, id: :game_start, ampm: true, class: "input" %>
+      <%= form.datetime_select :start, id: :game_start, ampm: true, discard_year: true, class: "input" %>
     </div>
 
     <div class="group">
       <label for="user" class="label">Stop</label>
-      <%= form.datetime_select :stop, id: :game_stop, ampm: true, class: "input" %>
+      <%= form.datetime_select :stop, id: :game_stop, ampm: true, discard_year: true,  class: "input" %>
     </div>
 
     <div class="group">
@@ -41,10 +41,14 @@
     </div>
 </div>
 
-    <div class="disc">
+  <div class="disc">
+    <div class="label">
       <%= form.label :description %>
+      </div>
       <%= form.text_area :description, id: :game_description , placeholder: "Location Details, Attire Details so that other players can find you,Age Range, Skill Level"%>
-    </div>
+
+  </div>
+
 
     <div class="group">
       <%= form.submit class: "button" %>
