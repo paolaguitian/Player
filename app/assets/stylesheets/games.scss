@@ -129,9 +129,10 @@ margin-top: 0px;
 }
 
 .container-games {
-    padding-top: 30px;
+    width: 80%;
+    padding-top: 310px;
     color: black;
-    background: white;
+    margin: 0 auto;
 }
 
 // form {
@@ -139,10 +140,7 @@ margin-top: 0px;
 //     padding-left: 40px;
 // }
 
-table {
-    margin-left: 100px;
-   background-color: transparent;
-}
+
 
 thead {
     text-align: left;
@@ -183,7 +181,7 @@ td {
     display: flex;
 }
 
-img {
+.top img {
   width: 150px;
   height: 150px;
   position: absolute;
@@ -358,4 +356,118 @@ orm .group input[data-type="password"]{
     form {
         padding-top: 21px;
     }
+}
+
+.container-map {
+   background-image: url(football.jpg);
+   background-repeat: no-repeat;
+   /* background: #ffffff ; */
+   position: fixed;
+   padding-top: 103px;
+   width: 100%;
+   margin-top: 0px;
+   z-index: 1000;
+
+}
+
+tr {
+    padding-top: 10px;
+    border-bottom: 3px solid grey;
+}
+
+#show {
+   display: inline-block;
+   float: right;
+   margin-top: 0px;
+   margin-bottom: 5px;
+}
+
+
+#new-game {
+   margin-left: 20px;
+   margin-bottom: 20px;
+}
+
+.button-size-small {
+   padding: 5px;
+
+}
+#new {
+ margin-bottom: 10%;
+}
+.games-title {
+   color: white;
+   font-size: 3em;
+   letter-spacing: -2px;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+#description{
+   padding-left: 10px;
+}
+
+#location{
+   padding-left: 120px;
+}
+
+td {
+   display: flex;
+}
+
+img {
+   width: 30%;
+   height: 30%;
+   position: relative;
+   vertical-align: middle;
+   top: 14vh;
+   margin-top: -68px;
+ //  margin-left: 350px;
+ //  margin-top: 15%;
+ //  margin-bottom: 0px;
+}
+#map{
+   position: fixed;
+   overflow: hidden;
+   position: fixed;
+   overflow: hidden;
+   padding-top: 180px;
+   overflow: hidden;
+   margin: 0 auto;
+   width: 364px;
+   /* right: 0px; */
+}
+
+.container-map-box {
+
+   background: white;
+}
+table {
+ background-color: rgba(249, 243, 243, 0.66);
+}
+
+thead {
+    text-align: left;
+    padding: 0px;
+}
+.games-display {
+ background-attachment: fixed;
+ background-image: url(football.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+   height: 100%;
+   margin: 0px;
+   padding: 0;
+   width: 100%;
+}
+
+
+img {
+   width: 30%;
+   height: 30%;
+   position: relative;
+   vertical-align: middle;
+   top: 14vh;
+   margin-top: -68px;
+
 }
