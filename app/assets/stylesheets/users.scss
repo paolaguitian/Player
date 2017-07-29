@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none}
 .login-html{
     width:100%;
     height:100%;
-    position:absolute;
+    position:relative;
     padding:90px 70px 50px 70px;
     background:rgba(40,57,101,.9);
 }
@@ -184,15 +184,17 @@ th {
   padding-left: 100px
 }
 
-form {
-  margin: 0px;
-  padding-top: 50px;
-  margin: 0px;
-  padding-top: 90px;
-  display: inline-grid;
-  padding-left: 26px;
-}
+ 
 
+form {
+  padding-top: 50px;
+  /*margin: 0px;*/
+  /*margin: 0px;*/
+  /*padding-top: 90px;*/
+  /*display: inline-grid;*/
+  /*padding-left: 26px;*/
+
+}
 
 
 #contact input[type="text"],
