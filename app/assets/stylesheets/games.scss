@@ -25,15 +25,24 @@
 
 }
 
+button{
+  border: none;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+}
+.buttoncolor{
+  color: white !important;
+}
 .login{
   padding-top: 20px;
   padding-right: 20px;
 }
 
 .login button{
-    background-color: #4CAF50;
     border-radius: 0px;
-
+    color: white;
 }
 .login button:first-of-type{
   margin-left: 7px;
@@ -50,8 +59,8 @@
 
 .logo-search .search-box {
   position: absolute;
-  top: 34vh;
-  left: 16%;
+  top: 27vh;
+  left: 28%;
 }
 #cover{
   height: 100%;
@@ -61,6 +70,7 @@
 
 
 .btn-default{
+
   color: white;
   background-color: transparent;
 
@@ -170,7 +180,7 @@ img {
   height: 150px;
   position: absolute;
   vertical-align: middle;
-  top: 11vh;
+  top: 7vh;
   left: 32%;
   //  margin-left: 350px;
   //  margin-top: 15%;
@@ -270,8 +280,7 @@ img {
 
 }
 
-
-.game-form .group input[data-type="password"]{
+orm .group input[data-type="password"]{
     text-security:circle;
     -webkit-text-security:circle;
 }
