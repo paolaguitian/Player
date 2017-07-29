@@ -60,4 +60,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'google_places'
 gem 'geocoder'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
+
+# gem 'bootstrap', '~> 4.0.0.alpha6'

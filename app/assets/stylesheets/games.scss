@@ -81,7 +81,42 @@
    margin-top: 41px;
 }
 
+body {
+	margin: 0px;
+}
+
+.games-display {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    width: 100%;
+}
+
+.search-box {
+	padding-left: 44%;
+	padding-top: 20%;
+}
+
+.width {
+	height: 100%;
+    margin: 0px;
+    padding: 0;
+}
+
+.head-bar {
+    background-image: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 25%;
+    padding: 0px;
+    margin-top: 0px;
+}
+
 .background-home {
+background-image: url(https://static.pexels.com/photos/477614/pexels-photo-477614.jpeg); 
 background-position: center;
 background-size: 100%;
 background-repeat: no-repeat;
@@ -97,51 +132,68 @@ margin-top: 0px;
 }
 
 .signup-box {
-    background-color: white;
-    padding-left: 30px;
+	width: 100%;
+	background-color: white;
+	padding-left: 30px;
 }
 
 .container-games {
-    padding-top: 30px;
+    width: 80%;
+    padding-top: 310px;
     color: black;
     background: white;
+    margin: 0 auto;
 }
 
-// form {
-//
-//     padding-left: 40px;
-// }
+form {
+
+	padding-left: 40px;
+}
 
 table {
-    margin-left: 100px;
-   background-color: transparent;
+    background-color: transparent;
 }
 
 thead {
-    text-align: left;
-    padding: 0px;
+	text-align: left;
+	padding: 0px;
 }
 
 #location {
-    padding-left: 10px;
+	padding-left: 10px;
 }
 
 #start{
-    padding-left: 10px;
-}
+	padding-left: 10px;
+} 
 
 #stop{
-    padding-left: 10px;
-}
+	padding-left: 10px;
+} 
 
 #sport{
-        padding-left: 10px;
-
+		padding-left: 10px;
 }
 
-#player{
-        padding-left: 10px;
+#description{
+	padding-left: 10px;
+}
 
+#location{
+	padding-left: 120px;
+}
+
+td {
+	display: flex;
+	border-bottom-color: 5px black;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    vertical-align: middle;
+    margin-top: 10px;
 }
 
 #description{
@@ -168,10 +220,21 @@ img {
   //  margin-bottom: 0px;
 }
 #map{
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
+    position: fixed;
+    overflow: hidden;
+    position: fixed;
+    overflow: hidden;
+    padding-top: 180px;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 290px;
+    /* right: 0px; */
 }
+
+.container-map-box {
+    background: white;
+}
+
 
 .game-wrap{
     width:100%;
@@ -325,3 +388,42 @@ img {
         padding-top: 30px;
     }
 }
+
+.container-map {
+    background: white;
+    position: fixed;
+    padding-top: 23px;
+    width: 100%;
+    margin-top: 72px;
+    z-index: 1000;
+
+}
+
+tr {
+	padding-top: 10px;
+	border-bottom: 3px solid grey;
+}
+
+#show {
+	display: inline-block;
+	float: right;
+	margin-top: -30px;
+}
+
+
+#new-game {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.button-size-small {
+    padding: 5px;
+
+}
+
+/*#show-game {
+    color: #5cb85c;
+}*/
+
+
+

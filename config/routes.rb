@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'games#home'
    resources :games do
      resources :comments
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
 # get '/cool' => 'gif#cool'
 # get '/sweet' => 'gif#sweet'
 
-  root 'games#index'
+get '/index' => 'games#index'
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 get '/logout' => 'sessions#destroy'

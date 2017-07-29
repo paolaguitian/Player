@@ -34,7 +34,7 @@ class GamesController < ApplicationController
       'wikipedia/commons/thumb/0/0c/',
       'Sport_balls.svg/2000px-Sport_balls.svg.png'].join
   }
-  dimension = '25' #sets dimesnion of icon
+  dimension = '25' #sets dimension of icon
   # string 'widthxheight' for image_tag
   @@dimensions = 2.times.map{ dimension }.join('x') #puts size in format
   @@game_icon_image = @@image_urls[:default]
@@ -45,6 +45,9 @@ class GamesController < ApplicationController
 def user
   @user = Game.current_user
 end
+
+  def home
+  end
 
   def index
     @games = Game.all
@@ -60,7 +63,7 @@ end
       [
         game,
         @@image_urls.fetch(
-        game.sport.downcase.to_sym,
+        game.sport.downcase.to_sym, 
         @@image_urls[:default]),
       ]
     end
