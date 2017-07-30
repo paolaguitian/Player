@@ -33,16 +33,20 @@
   background-position: center;
 }
 
-button{
-  border: none;
-  padding: 10px 0px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+.navbar{
+  top: 0;
+  left: 0;
+  // z-index: 9999;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: #337ab7;
+  border-color: transparent;
+  font: white;
+}
+.navbar-default .navbar-nav>li>a {
+  color:white;
+}
 
-}
-.buttoncolor{
-  color: white !important;
-}
 .login{
   padding-top: 20px;
   padding-right: 20px;
@@ -81,7 +85,6 @@ button{
 
   color: white;
   background-color: transparent;
-
   float: right;
 }
 .search-box {
@@ -186,7 +189,7 @@ td {
   height: 150px;
   position: absolute;
   vertical-align: middle;
-  top: 7vh;
+  top: 18vh;
   left: 32%;
   //  margin-left: 350px;
   //  margin-top: 15%;
@@ -451,10 +454,7 @@ thead {
     padding: 0px;
 }
 .games-display {
- background-attachment: fixed;
- background-image: url(football.jpg);
- background-repeat: no-repeat;
- background-size: cover;
+
    height: 100%;
    margin: 0px;
    padding: 0;
