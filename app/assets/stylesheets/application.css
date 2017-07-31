@@ -115,6 +115,7 @@ li {
     position: fixed;
     padding: 0;
     margin-top: 0px;
+    z-index: 9999;
 }
 
 .container {

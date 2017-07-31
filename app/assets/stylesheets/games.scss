@@ -86,6 +86,7 @@ body {
 }
 
 .games-display {
+ 
     height: 100%;
     margin: 0px;
     padding: 0;
@@ -141,7 +142,6 @@ margin-top: 0px;
     width: 80%;
     padding-top: 310px;
     color: black;
-    background: white;
     margin: 0 auto;
 }
 /*overriding the form on users signin page*/
@@ -151,7 +151,7 @@ margin-top: 0px;
 }*/
 
 table {
-    background-color: transparent;
+  background-color: rgba(249, 243, 243, 0.66);
 }
 
 thead {
@@ -188,13 +188,6 @@ td {
 	border-bottom-color: 5px black;
 }
 
-/*img {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    vertical-align: middle;
-    
-}*/
 
 #description{
     padding-left: 10px;
@@ -215,24 +208,19 @@ img {
     vertical-align: middle;
     top: 14vh;
     margin-top: -68px;
-  //  margin-left: 350px;
-  //  margin-top: 15%;
-  //  margin-bottom: 0px;
+
 }
 #map{
     position: fixed;
-    overflow: hidden;
-    position: fixed;
-    overflow: hidden;
     padding-top: 180px;
     overflow: hidden;
     margin: 0 auto;
-    width: 290px;
+    width: 364px;
     /* right: 0px; */
 }
 
 .container-map-box {
-    background: white;
+
 }
 
 
@@ -390,7 +378,9 @@ img {
 }
 
 .container-map {
-    background: #ffffff;
+    background-image: url(football.jpg);
+    background-repeat: no-repeat;
+    /* background: #ffffff; */
     position: fixed;
     padding-top: 103px;
     width: 100%;
@@ -424,7 +414,22 @@ tr {
  #new {
   margin-bottom: 10%;
  }
+ .games-title {
+    color: white;
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+ }
 
+ .background-display {
+
+   background-attachment: fixed;
+  background-image: url(football.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+ }
 
 /*#show-game {
     color: #5cb85c;

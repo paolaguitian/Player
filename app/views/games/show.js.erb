@@ -7,6 +7,6 @@ $('.modal-body').html("<p><strong>Location:</strong><%=@game.location%></p>" +
 $('.modal-body').append("<%= escape_javascript render(:partial => 'comments/comment') %>");
 
 
-$('.modal-body form').find('.actions').find('input[type=submit]').remove();
+// $('.modal-body form').find('.actions').find('input[type=submit]').remove();
 
 $('.modal').modal();
