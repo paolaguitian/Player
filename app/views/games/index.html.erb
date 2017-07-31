@@ -15,50 +15,52 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <body class="games-display">
-<div class="container-map-box">
-  <div class="container-map">
-  <div id="map"></div>
+  <div class="background-display">
+    <div class="container-map-box">
+      <div class="container-map">
+      <div id="map"></div>
 
-  </div>
-</div>
-
-<div class="container-games">
-
-
-  <h1 class="games-title">Games</h1>
-  <%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
-  <table>
-    </thead>
-
-    <tbody>
-      <!-- will display game info along with corresoponding image -->
-      <div><% @display_games.each do |game, icon_url| %></div>
-
-
-        <div><tr>
-          <td><%= image_tag icon_url, size: @dimensions %></td>
-          <td id="location"><%= game.location %></td>
-          <td id="location"><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
-          <td id="location"><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
-          <td id="location"><%= game.sport %></td>
-
-
-
-          <td id="show"><button type="button" class="btn btn-outline-success button-size-small"><%= link_to 'Show', game, remote: true%></button></td>
-
-
-
-
-
-        </tr>
-      <% end %>
       </div>
+    </div>
+
+    <div class="container-games">
+
+
+      <h1 class="games-title">Games</h1>
+      <%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
+      <table>
+        </thead>
+
+        <tbody>
+          <!-- will display game info along with corresoponding image -->
+          <div><% @display_games.each do |game, icon_url| %></div>
+
+
+            <div><tr>
+              <td><%= image_tag icon_url, size: @dimensions %></td>
+              <td id="location"><%= game.location %></td>
+              <td id="location"><%= game.start.strftime("%a, %B %d, %I:%M%P") %> </td>
+              <td id="location"><%= game.stop.strftime("%a, %B %d, %I:%M%P") %></td>
+              <td id="location"><%= game.sport %></td>
 
 
 
-    </tbody>
+              <td id="show"><button type="button" class="btn btn-outline-success button-size-small"><%= link_to 'Show', game, remote: true%></button></td>
 
-  </table>
-  <br>
-   <button id="new" type="button" class="btn btn-outline-success"><%= link_to 'New Game', new_game_path %></button>
-</div>
+
+
+
+
+            </tr>
+          <% end %>
+          </div>
+
+
+
+        </tbody>
+
+      </table>
+      <br>
+       <button id="new" type="button" class="btn btn-outline-success"><%= link_to 'New Game', new_game_path %></button>
+    </div>
+  </div>
