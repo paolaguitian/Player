@@ -10,7 +10,6 @@
   <%= @game.location %>
 </p>
 
-
 <p>
   <strong>Start:</strong>
   <%= @game.start.strftime("%a, %B %d, %I:%M%P") %>
@@ -21,7 +20,6 @@
   <%= @game.stop.strftime("%a, %B %d, %I:%M%P") %>
 </p>
 
-
 <p>
   <strong>Sport:</strong>
   <%= @game.sport %>
@@ -31,6 +29,7 @@
   <strong>Description:</strong>
   <%= @game.description %>
 </p>
+
 <%= render 'comments/comment' %>
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Edit', edit_game_path(@game) %>
 <%= link_to 'Back', games_path %>

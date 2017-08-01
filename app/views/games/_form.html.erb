@@ -2,17 +2,17 @@
   <div class="game-html">
     <input class="game-in"><label for="tab-1" class="tab">New Game</label>
 
-                  <%= form_with(model: game, local: true) do |form| %>
-                  <% if game.errors.any? %>
-                  <div id="error_explanation">
-                    <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
-                    <ul>
-                      <% game.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                      <% end %>
-                    </ul>
-                  </div>
-                  <% end %>
+    <%= form_with(model: game, local: true) do |form| %>
+    <% if game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+      <ul>
+        <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
 
     <div class="group">
       <label for="user" class="label">location</label>
@@ -31,29 +31,31 @@
 
     <div class="group">
       <div >
-      <label for="user" class="label">Sport</label>
+        <label for="user" class="label">Sport</label>
 
-      <%= form.select(:sport,options_for_select([['select one', nil],['SOCCER','SOCCER'],
-      ['BASKETBALL','BASKETBALL'],['FOOTBALL','FOOTBALL'],['KICKBALL','KICKBALL'],
-      ['FRISBEE','FRISBEE'],['VOLLEYBALL','VOLLEYBALL'],
-      ['BASEBALL/SOFTBALL','BASEBALL/SOFTBALL'],['BIKING','BIKING'],['YOGA','YOGA'],['OTHER','OTHER']]),{},{id: "options"}) %>
+        <%= form.select(:sport,options_for_select([['select one', nil],['SOCCER','SOCCER'],
+        ['BASKETBALL','BASKETBALL'],['FOOTBALL','FOOTBALL'],['KICKBALL','KICKBALL'],
+        ['FRISBEE','FRISBEE'],['VOLLEYBALL','VOLLEYBALL'],
+        ['BASEBALL/SOFTBALL','BASEBALL/SOFTBALL'],['BIKING','BIKING'],['YOGA','YOGA'],['OTHER','OTHER']]),{},{id: "options"}) %>
 
+      </div>
     </div>
-</div>
 
-  <div class="disc">
-    <div class="label">
-      <%= form.label :description %>
+    <div class="disc">
+      <div class="label">
+        <%= form.label :description %>
       </div>
       <%= form.text_area :description, id: :game_description , placeholder: "Location Details, Attire Details so that other players can find you,Age Range, Skill Level"%>
 
-  </div>
+    </div>
 
 
     <div class="group">
-      <%= form.submit class: "button" %>
-    </div>
 
+      <%= form.submit class: "button" %>
+    
+
+    </div>
 
     <% end %>
 
