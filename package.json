@@ -1,7 +1,14 @@
 {
   "name": "Player",
   "private": true,
+  "engines": {
+    "node": "6.5.0",
+    "yarn": "0.18.1"
+  },
   "dependencies": {
     "jquery": "^3.2.1"
+  },
+  "scripts": {
+    "heroku-postbuild": "cd vendor && yarn"
   }
 }
