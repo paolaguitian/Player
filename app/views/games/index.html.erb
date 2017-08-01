@@ -26,7 +26,8 @@
     <div class="container-games">
 
 
-      <h1 class="games-title">Games</h1>
+      <button id="new" type="button" class="btn btn-outline-success"><%= link_to 'New Game', new_game_path %></button>
+
       <%= hidden_field_tag 'games_lat_and_lng', @games.map {|g| {:lat => g.latitude, :lng => g.longitude, :description => g.description}}.to_json %>
       <table>
         </thead>
@@ -61,6 +62,5 @@
 
       </table>
       <br>
-       <button id="new" type="button" class="btn btn-outline-success"><%= link_to 'New Game', new_game_path %></button>
     </div>
   </div>

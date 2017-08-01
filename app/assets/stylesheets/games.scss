@@ -32,17 +32,35 @@
   background-size: cover;
   background-position: center;
 }
-
-.navbar{
-  top: 0;
-  left: 0;
-  // z-index: 9999;
-  width: 100%;
-  margin-bottom: 0;
-  background-color: #337ab7;
-  border-color: transparent;
-  font: white;
+.navbar {
+   min-width: 100%;
+   position: fixed;
+   padding: 0;
+   margin-top: 0px;
+   z-index: 9999;
+   background-color:  rgba(66, 134, 244,.9);
 }
+#new {
+  width: 100%;
+  background-color: rgba(66, 134, 244,.9);
+  color: white;
+  border: solid;
+
+}
+
+#new a{
+  color: white;
+}
+// .navbar{
+//   top: 0;
+//   left: 0;
+//   // z-index: 9999;
+//   width: 100%;
+//   margin-bottom: 0;
+//   background-color: #337ab7;
+//   border-color: transparent;
+//   font: white;
+// }
 .navbar-default .navbar-nav>li>a {
   color:white;
 }
@@ -119,6 +137,12 @@ background-size: cover;
 margin: 0px;
 }
 
+.background-display {
+   background-attachment: fixed;
+   background-image: url(football.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
 #type-left {
 padding-left: 30px;
 padding-top: 30px;
@@ -130,18 +154,14 @@ margin-top: 0px;
     background-color: white;
     padding-left: 30px;
 }
-
 .container-games {
-    width: 80%;
-    padding-top: 310px;
-    color: black;
-    margin: 0 auto;
+   width: 80%;
+   padding-top: 450px;
+   color: black;
+   margin: 0 auto;
 }
 
-// form {
-//
-//     padding-left: 40px;
-// }
+
 
 
 
@@ -196,11 +216,12 @@ td {
   //  margin-bottom: 0px;
 }
 #map{
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
+   position: fixed;
+   padding-top: 300px;
+   overflow: hidden;
+   margin: 0 auto;
+   width: 100%;
 }
-
 .game-wrap{
     width:100%;
     margin:auto;
@@ -429,25 +450,16 @@ img {
  //  margin-top: 15%;
  //  margin-bottom: 0px;
 }
-#map{
-   position: fixed;
-   overflow: hidden;
-   position: fixed;
-   overflow: hidden;
-   padding-top: 180px;
-   overflow: hidden;
-   margin: 0 auto;
-   width: 364px;
-   /* right: 0px; */
-}
+
 
 .container-map-box {
 
    background: white;
 }
 table {
- background-color: rgba(249, 243, 243, 0.66);
+ background-color: rgba(249, 243, 243, 0.9);
 }
+
 
 thead {
     text-align: left;

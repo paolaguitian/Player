@@ -99,13 +99,15 @@ end
         # gp.user_id = @current_user.id
         # gp.game_id = @game.id
         # gp.save!
-        format.html { redirect_to root_path, notice: 'Game was successfully created.' }
+        format.html { redirect_to games_path, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
+      
     end
+
   end
 
   # PATCH/PUT /games/1
