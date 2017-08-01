@@ -1,5 +1,5 @@
 {
-  "name": "Player",
+  "name": "Questionnaire",
   "private": true,
   "engines": {
     "node": "6.5.0",
